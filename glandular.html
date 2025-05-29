@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glandular System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: black;
+      color: #f0f0f0;
+    }
+
+    header {
+      background-color: black;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .title {
+      font-size: 36px;
+      font-weight: 800;
+      color: red;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav button {
+      background: none;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    nav button:hover {
+      color: red;
+    }
+
+    nav button:hover::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: red;
+    }
+
+    h1.section-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: red;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 40px;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .text-content {
+      flex: 1;
+    }
+
+    .text-content p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .text-content ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 18px;
+    }
+
+    .image-box {
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+    }
+
+    .reverse {
+      flex-direction: row-reverse;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="title">Human Body</div>
+    <nav>
+      <button onclick="location.href='index.html'">Home</button>
+      <button onclick="location.href='nervous.html'">Nervous System</button>
+      <button>Glandular System</button>
+      <button onclick="location.href='reproductive.html'">Reproductive System</button>
+    </nav>
+  </header>
+
+  <!-- Glandular System -->
+  <h1 class="section-title">Glandular System</h1>
+  <section class="container">
+    <div class="text-content">
+      <p>
+        The glandular system, also known as the endocrine system, is a vital part of the human body responsible for maintaining homeostasis by producing and releasing hormones. These hormones act as chemical messengers that travel through the bloodstream to regulate growth, metabolism, mood, development, tissue function, sexual function, and even sleep.
+      </p>
+      <p>
+        Unlike the nervous system, which provides quick responses, the glandular system works more slowly but has long-lasting effects. The glands secrete hormones directly into the blood (endocrine) or through ducts (exocrine), affecting organs and systems throughout the body.
+      </p>
+      <p>
+        This system plays a central role in coordinating numerous body functions and adapting to changes in the internal and external environment. A balanced endocrine system is essential for good health, and disruptions can lead to disorders such as diabetes, thyroid problems, or growth abnormalities.
+      </p>
+      <ul>
+        <li><strong>Endocrine Glands:</strong> Secrete hormones directly into the blood (e.g., pituitary, thyroid, adrenal).</li>
+        <li><strong>Exocrine Glands:</strong> Release substances through ducts to the surface or internal cavities (e.g., sweat, salivary glands).</li>
+        <li><strong>Main Hormones:</strong> Insulin, adrenaline, estrogen, testosterone, thyroxine, cortisol, melatonin, etc.</li>
+      </ul>
+    </div>
+    <div class="image-box">
+      <img src="https://th.bing.com/th/id/R.d6d89173fe89a1e2eb81cd4c09bf23d5?rik=yL1OKOoDd4vysA&riu=http%3a%2f%2fmedicinebtg.com%2fwp-content%2fuploads%2f2017%2f06%2fchart-format-jpeg-width-px-height-de-Glands-In-The-Body-Diagram-Anatomy-mar-glands-in-the-body-diagram.jpg&ehk=JJ4YG%2bmE80i6WlW55n0khPMif7wEJfh4BkXyttqS1WU%3d&risl=&pid=ImgRaw&r=0" alt="Glandular System Diagram" />
+    </div>
+  </section>
+
+  <!-- Major Glands -->
+  <h1 class="section-title">Major Glands</h1>
+  <section class="container reverse">
+    <div class="text-content" style="flex: 1 1 100%;">
+      <ul>
+        <li><strong>Pituitary Gland:</strong> Called the "master gland," it regulates other glands and produces hormones for growth, reproduction, and metabolism.</li>
+        <li><strong>Thyroid Gland:</strong> Located in the neck, it controls the body’s metabolic rate through hormones like thyroxine.</li>
+        <li><strong>Adrenal Glands:</strong> Positioned above the kidneys, they produce cortisol and adrenaline to manage stress, metabolism, and blood pressure.</li>
+        <li><strong>Pancreas:</strong> Functions as both an endocrine and exocrine gland. It releases insulin and glucagon to control blood sugar levels.</li>
+        <li><strong>Gonads (Testes & Ovaries):</strong> Produce sex hormones — testosterone in males, estrogen and progesterone in females — which regulate sexual development and reproduction.</li>
+        <li><strong>Pineal Gland:</strong> Produces melatonin, which helps regulate sleep-wake cycles (circadian rhythm).</li>
+        <li><strong>Hypothalamus:</strong> Links the nervous system to the endocrine system. It controls the pituitary gland and regulates body temperature, hunger, and thirst.</li>
+        <li><strong>Parathyroid Glands:</strong> Four small glands behind the thyroid that regulate calcium levels in the blood and bones.</li>
+        <li><strong>Thymus:</strong> Located behind the sternum, important for immune function during childhood; it produces T-cells.</li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+
+</html>

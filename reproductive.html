@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reproductive System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: black;
+      color: #f0f0f0;
+    }
+
+    header {
+      background-color: black;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .title {
+      font-size: 36px;
+      font-weight: 800;
+      color: red;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav button {
+      background: none;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    nav button:hover {
+      color: red;
+    }
+
+    nav button:hover::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: red;
+    }
+
+    h1.section-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: red;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 40px;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .text-content {
+      flex: 1;
+    }
+
+    .text-content p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .text-content ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 18px;
+    }
+
+    .image-box {
+      max-width: 450px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .reverse {
+      flex-direction: row-reverse;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-box {
+        max-width: 100%;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="title">Human Body</div>
+    <nav>
+      <button onclick="location.href='index.html'">Home</button>
+      <button onclick="location.href='nervous.html'">Nervous System</button>
+      <button onclick="location.href='glandular.html'">Glandular System</button>
+      <button>Reproductive System</button>
+    </nav>
+  </header>
+
+  <!-- Male Reproductive System -->
+  <h1 class="section-title">Male Reproductive System</h1>
+  <section class="container">
+    <div class="text-content">
+      <p>
+        The male reproductive system is designed to produce, maintain, and transport sperm and protective fluid (semen), and to discharge sperm within the female reproductive tract during sex. Additionally, it produces and secretes male sex hormones that help maintain the reproductive system. This system works in coordination with other body systems and is vital for human reproduction.
+      </p>
+      <ul>
+        <li><strong>Testes:</strong> Produce sperm and testosterone, the primary male sex hormone.</li>
+        <li><strong>Scrotum:</strong> A skin-covered sac that regulates the temperature of the testes for proper sperm production.</li>
+        <li><strong>Vas deferens:</strong> A muscular tube that transports mature sperm from the epididymis to the urethra.</li>
+        <li><strong>Prostate gland:</strong> Secretes fluid that nourishes and protects sperm during ejaculation.</li>
+        <li><strong>Penis:</strong> The organ that delivers sperm into the female body during intercourse.</li>
+      </ul>
+    </div>
+    <div class="image-box">
+      <img src="https://graphdiagram.com/chart/2021/12/Male-Reproductive-System-Anatomy-1024x639.jpg" alt="Male Reproductive System" />
+    </div>
+  </section>
+
+  <!-- Female Reproductive System (External) -->
+  <h1 class="section-title">Female Reproductive System (External)</h1>
+  <section class="container reverse">
+    <div class="image-box">
+      <img src="https://sdmntpreastus2.oaiusercontent.com/files/00000000-5230-61f6-a69b-35c7df8d4998/raw?se=2025-05-29T10%3A05%3A18Z&sp=r&sv=2024-08-04&sr=b&scid=bb073ca0-65c2-5285-80fe-eeafe013778f&skoid=bbd22fc4-f881-4ea4-b2f3-c12033cf6a8b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-29T08%3A45%3A19Z&ske=2025-05-30T08%3A45%3A19Z&sks=b&skv=2024-08-04&sig=JDaxWThTnzMiuYtdjXSpSzLCirYSrZGhns%2BFrRaDuLQ%3D" alt="Female External Reproductive System" />
+    </div>
+    <div class="text-content">
+      <p>
+        The external female reproductive organs, collectively known as the vulva, play a crucial role in protecting internal genital organs, facilitating sexual pleasure, and serving as an entryway for sperm. These structures are visible on the outside of the body and are also important for urination and childbirth.
+      </p>
+      <ul>
+        <li><strong>Labia majora and minora:</strong> Skin folds that protect the internal genital organs and contain sweat and oil-secreting glands.</li>
+        <li><strong>Clitoris:</strong> A sensitive organ rich in nerve endings, playing a central role in female sexual pleasure.</li>
+        <li><strong>Urethral opening:</strong> The opening through which urine is excreted from the body.</li>
+        <li><strong>Vaginal opening:</strong> Entry to the vagina; serves as the passage for menstrual flow and childbirth.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Female Reproductive System (Internal) -->
+  <h1 class="section-title">Female Reproductive System (Internal)</h1>
+  <section class="container">
+    <div class="text-content">
+      <p>
+        The internal female reproductive organs are responsible for producing ova (eggs), facilitating fertilization, supporting fetal development, and giving birth. This complex system works in cycles regulated by hormones and prepares the body for potential pregnancy each month.
+      </p>
+      <ul>
+        <li><strong>Ovaries:</strong> Small, oval-shaped glands that produce eggs and hormones such as estrogen and progesterone.</li>
+        <li><strong>Fallopian tubes:</strong> Thin tubes that connect the ovaries to the uterus; fertilization typically occurs here.</li>
+        <li><strong>Uterus:</strong> A hollow, muscular organ where a fertilized egg implants and develops during pregnancy.</li>
+        <li><strong>Vagina:</strong> A flexible, muscular canal used for menstruation, sexual intercourse, and childbirth.</li>
+        <li><strong>Cervix:</strong> The narrow opening between the uterus and the vagina that dilates during labor to allow childbirth.</li>
+      </ul>
+    </div>
+    <div class="image-box">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.b26LEVJ_JVOzZGYK1955ogHaDx?rs=1&pid=ImgDetMain" alt="Female Internal Reproductive System" />
+    </div>
+  </section>
+</body>
+
+</html>
