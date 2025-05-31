@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -65,12 +64,27 @@
       background-color: red;
     }
 
-    h1.section-title {
-      font-size: 36px;
+    .typewriter-title {
+      font-size: 40px;
       font-weight: 800;
       color: red;
       text-align: center;
-      margin-top: 40px;
+      margin: 40px auto 20px;
+      width: fit-content;
+      border-right: 3px solid #f0f0f0;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(30) 1 normal both, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #f0f0f0 }
     }
 
     .container {
@@ -132,7 +146,6 @@
     }
   </style>
 </head>
-
 <body>
   <header>
     <div class="title">Human Body</div>
@@ -141,26 +154,30 @@
       <button onclick="location.href='nervous.html'">Nervous System</button>
       <button onclick="location.href='glandular.html'">Glandular System</button>
       <button>Reproductive System</button>
+      <button onclick="location.href='trivia.html'">Trivia/FunFacts</button>
     </nav>
   </header>
+
+  <!-- Typewriter Title -->
+  <h1 class="typewriter-title">Reproductive System</h1>
 
   <!-- Male Reproductive System -->
   <h1 class="section-title">Male Reproductive System</h1>
   <section class="container">
     <div class="text-content">
       <p>
-        The male reproductive system is designed to produce, maintain, and transport sperm and protective fluid (semen), and to discharge sperm within the female reproductive tract during sex. Additionally, it produces and secretes male sex hormones that help maintain the reproductive system. This system works in coordination with other body systems and is vital for human reproduction.
+        The male reproductive system is designed to produce, maintain, and transport sperm and protective fluid (semen), and to discharge sperm within the female reproductive tract during sex.
       </p>
       <ul>
         <li><strong>Testes:</strong> Produce sperm and testosterone, the primary male sex hormone.</li>
-        <li><strong>Scrotum:</strong> A skin-covered sac that regulates the temperature of the testes for proper sperm production.</li>
-        <li><strong>Vas deferens:</strong> A muscular tube that transports mature sperm from the epididymis to the urethra.</li>
-        <li><strong>Prostate gland:</strong> Secretes fluid that nourishes and protects sperm during ejaculation.</li>
-        <li><strong>Penis:</strong> The organ that delivers sperm into the female body during intercourse.</li>
+        <li><strong>Scrotum:</strong> A skin-covered sac that regulates the temperature of the testes.</li>
+        <li><strong>Vas deferens:</strong> Transports mature sperm to the urethra.</li>
+        <li><strong>Prostate gland:</strong> Secretes fluid that nourishes and protects sperm.</li>
+        <li><strong>Penis:</strong> Delivers sperm into the female body during intercourse.</li>
       </ul>
     </div>
     <div class="image-box">
-      <img src="https://graphdiagram.com/chart/2021/12/Male-Reproductive-System-Anatomy-1024x639.jpg" alt="Male Reproductive System" />
+      <img src="data:image/jpeg;base64,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" alt="Male Reproductive System">
     </div>
   </section>
 
@@ -168,17 +185,17 @@
   <h1 class="section-title">Female Reproductive System (External)</h1>
   <section class="container reverse">
     <div class="image-box">
-      <img src="https://sdmntpreastus2.oaiusercontent.com/files/00000000-5230-61f6-a69b-35c7df8d4998/raw?se=2025-05-29T10%3A05%3A18Z&sp=r&sv=2024-08-04&sr=b&scid=bb073ca0-65c2-5285-80fe-eeafe013778f&skoid=bbd22fc4-f881-4ea4-b2f3-c12033cf6a8b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-29T08%3A45%3A19Z&ske=2025-05-30T08%3A45%3A19Z&sks=b&skv=2024-08-04&sig=JDaxWThTnzMiuYtdjXSpSzLCirYSrZGhns%2BFrRaDuLQ%3D" alt="Female External Reproductive System" />
+      <img src="https://s3-us-west-2.amazonaws.com/courses-images-archive-read-only/wp-content/uploads/sites/403/2015/04/21031923/Figure_28_02_02.jpg" alt="Female External Reproductive System">
     </div>
     <div class="text-content">
       <p>
-        The external female reproductive organs, collectively known as the vulva, play a crucial role in protecting internal genital organs, facilitating sexual pleasure, and serving as an entryway for sperm. These structures are visible on the outside of the body and are also important for urination and childbirth.
+        The external female reproductive organs, collectively known as the vulva, include structures that protect internal organs and support sexual function.
       </p>
       <ul>
-        <li><strong>Labia majora and minora:</strong> Skin folds that protect the internal genital organs and contain sweat and oil-secreting glands.</li>
-        <li><strong>Clitoris:</strong> A sensitive organ rich in nerve endings, playing a central role in female sexual pleasure.</li>
-        <li><strong>Urethral opening:</strong> The opening through which urine is excreted from the body.</li>
-        <li><strong>Vaginal opening:</strong> Entry to the vagina; serves as the passage for menstrual flow and childbirth.</li>
+        <li><strong>Labia majora and minora:</strong> Skin folds protecting internal genital organs.</li>
+        <li><strong>Clitoris:</strong> A sensitive organ involved in sexual pleasure.</li>
+        <li><strong>Urethral opening:</strong> Allows urine to exit the body.</li>
+        <li><strong>Vaginal opening:</strong> Entrance to the vagina, important for menstruation, intercourse, and childbirth.</li>
       </ul>
     </div>
   </section>
@@ -188,20 +205,19 @@
   <section class="container">
     <div class="text-content">
       <p>
-        The internal female reproductive organs are responsible for producing ova (eggs), facilitating fertilization, supporting fetal development, and giving birth. This complex system works in cycles regulated by hormones and prepares the body for potential pregnancy each month.
+        The internal organs are involved in producing eggs, fertilization, fetal development, and childbirth.
       </p>
       <ul>
-        <li><strong>Ovaries:</strong> Small, oval-shaped glands that produce eggs and hormones such as estrogen and progesterone.</li>
-        <li><strong>Fallopian tubes:</strong> Thin tubes that connect the ovaries to the uterus; fertilization typically occurs here.</li>
-        <li><strong>Uterus:</strong> A hollow, muscular organ where a fertilized egg implants and develops during pregnancy.</li>
-        <li><strong>Vagina:</strong> A flexible, muscular canal used for menstruation, sexual intercourse, and childbirth.</li>
-        <li><strong>Cervix:</strong> The narrow opening between the uterus and the vagina that dilates during labor to allow childbirth.</li>
+        <li><strong>Ovaries:</strong> Produce eggs and female hormones.</li>
+        <li><strong>Fallopian tubes:</strong> Where fertilization usually occurs.</li>
+        <li><strong>Uterus:</strong> Site for fetal development.</li>
+        <li><strong>Vagina:</strong> Birth canal and passage for menstrual flow.</li>
+        <li><strong>Cervix:</strong> Connects uterus to the vagina, opens during childbirth.</li>
       </ul>
     </div>
     <div class="image-box">
-      <img src="https://tse2.mm.bing.net/th/id/OIP.b26LEVJ_JVOzZGYK1955ogHaDx?rs=1&pid=ImgDetMain" alt="Female Internal Reproductive System" />
+      <img src="https://i.pinimg.com/originals/af/3c/29/af3c29d2598a6c12d2b9fff4fb5163c6.jpg" alt="Female Internal Reproductive System">
     </div>
   </section>
 </body>
-
 </html>
