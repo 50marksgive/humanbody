@@ -112,6 +112,32 @@
     .reverse {
       flex-direction: row-reverse;
     }
+
+    /* Typewriter Effect */
+    #typewriter {
+      display: inline-block;
+      border-right: 2px solid red;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(25, end) forwards, blink 0.8s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
   </style>
 </head>
 
@@ -123,11 +149,13 @@
       <button onclick="location.href='nervous.html'">Nervous System</button>
       <button>Glandular System</button>
       <button onclick="location.href='reproductive.html'">Reproductive System</button>
+      <button onclick="location.href='trivia.html'">Trivia/FunFacts</button>
     </nav>
   </header>
 
   <!-- Glandular System -->
-  <h1 class="section-title">Glandular System</h1>
+  <h1 class="section-title"><span id="typewriter"></span></h1>
+
   <section class="container">
     <div class="text-content">
       <p>
@@ -167,6 +195,23 @@
       </ul>
     </div>
   </section>
+
+  <script>
+    // Typewriter effect for "Glandular System"
+    const text = "Glandular System";
+    const typewriter = document.getElementById("typewriter");
+    let index = 0;
+
+    function type() {
+      if (index < text.length) {
+        typewriter.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 100);
+      }
+    }
+
+    type();
+  </script>
 
 </body>
 
