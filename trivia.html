@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Human Body Systems</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: black;
+      color: #f0f0f0;
+    }
+    header {
+      background-color: black;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .title {
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 800;
+      color: red;
+    }
+    .score-board {
+      font-size: 1.2rem;
+      color: red;
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    nav a button {
+      background: none;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    nav a button:hover {
+      color: red;
+      text-shadow: 0 0 8px red;
+    }
+    nav a button:hover::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: red;
+    }
+    .quiz-section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: red;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid red;
+      animation: typing 3s steps(30, end), blink 0.8s step-end infinite;
+      width: 20ch;
+      margin: 0 auto 30px;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 20ch; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    .quiz-container {
+      margin-top: 20px;
+    }
+    .question-box {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+    .question-box h3 {
+      margin-bottom: 15px;
+    }
+    .options button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border: 2px solid #444;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .options button:hover {
+      background-color: #444;
+    }
+    .options button.correct {
+      background-color: rgba(0, 255, 0, 0.3);
+      border-color: green;
+    }
+    .options button.wrong {
+      background-color: rgba(255, 0, 0, 0.3);
+      border-color: red;
+    }
+    @media (max-width: 768px) {
+      nav {
+        justify-content: center;
+      }
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="title">Human Body</div>
+  <div class="score-board" id="score-board">Score: 0</div>
+</header>
+
+<nav>
+  <a href="index.html"><button>Home</button></a>
+  <a href="nervous.html"><button>Nervous System</button></a>
+  <a href="glandular.html"><button>Glandular System</button></a>
+  <a href="reproductive.html"><button>Reproductive System</button></a>
+  <a href="trivia.html"><button>Trivia/FunFacts</button></a>
+</nav>
+
+<section class="quiz-section">
+  <div class="section-title">Trivia / Fun Facts</div>
+  <div class="quiz-container" id="quiz-container">
+    <!-- Questions appear here -->
+  </div>
+</section>
+
+<script>
+  const questions = [
+    {
+      question: "How much power does your brain generate?",
+      options: ["10W", "20W", "50W", "100W"],
+      answer: "20W"
+    },
+    {
+      question: "How fast can brain signals travel?",
+      options: ["50 mph", "250 mph", "100 mph", "500 mph"],
+      answer: "250 mph"
+    },
+    {
+      question: "How many thoughts does a person have each day?",
+      options: ["1,000", "10,000", "60,000–80,000", "100,000"],
+      answer: "60,000–80,000"
+    },
+    {
+      question: "Which part of the brain controls your heartbeat?",
+      options: ["Cerebrum", "Medulla", "Spinal Cord", "Hypothalamus"],
+      answer: "Medulla"
+    },
+    {
+      question: "How many neurons are in the human brain?",
+      options: ["10 billion", "86 billion", "1 trillion", "500 million"],
+      answer: "86 billion"
+    },
+    {
+      question: "Which part of the brain is responsible for memory?",
+      options: ["Amygdala", "Medulla", "Hippocampus", "Cerebellum"],
+      answer: "Hippocampus"
+    },
+    {
+      question: "What percentage of oxygen does the brain consume?",
+      options: ["10%", "20%", "50%", "5%"],
+      answer: "20%"
+    },
+    {
+      question: "What is the brain's primary source of energy?",
+      options: ["Fat", "Glucose", "Protein", "Carbohydrates"],
+      answer: "Glucose"
+    },
+    {
+      question: "What is the average weight of the human brain?",
+      options: ["1.4 kg", "2.5 kg", "800 g", "3 kg"],
+      answer: "1.4 kg"
+    },
+    {
+      question: "What protects the brain from harmful substances in the blood?",
+      options: ["Skull", "Blood-Brain Barrier (BBB)", "Cerebrospinal Fluid", "Meninges"],
+      answer: "Blood-Brain Barrier (BBB)"
+    }
+  ];
+
+  const quizContainer = document.getElementById('quiz-container');
+  const scoreBoard = document.getElementById('score-board');
+  let score = 0;
+
+  const correctSound = new Audio("https://www.soundjay.com/buttons/sounds/button-4.mp3");
+  const wrongSound = new Audio("https://www.soundjay.com/buttons/sounds/button-10.mp3");
+
+  questions.forEach((q, index) => {
+    const questionBox = document.createElement('div');
+    questionBox.classList.add('question-box');
+
+    const questionTitle = document.createElement('h3');
+    questionTitle.textContent = `${index + 1}. ${q.question}`;
+    questionBox.appendChild(questionTitle);
+
+    const optionsDiv = document.createElement('div');
+    optionsDiv.classList.add('options');
+
+    q.options.forEach(option => {
+      const btn = document.createElement('button');
+      btn.textContent = option;
+      btn.addEventListener('click', () => {
+        if (btn.disabled) return;
+        if (option === q.answer) {
+          btn.classList.add('correct');
+          correctSound.play();
+          score += 10;
+          scoreBoard.textContent = `Score: ${score}`;
+          Array.from(optionsDiv.children).forEach(b => b.disabled = true);
+        } else {
+          btn.classList.add('wrong');
+          wrongSound.play();
+          Array.from(optionsDiv.children).forEach(b => {
+            if (b.textContent === q.answer) {
+              b.classList.add('correct');
+            }
+            b.disabled = true;
+          });
+        }
+      });
+      optionsDiv.appendChild(btn);
+    });
+
+    questionBox.appendChild(optionsDiv);
+    quizContainer.appendChild(questionBox);
+  });
+</script>
+
+</body>
+</html>
