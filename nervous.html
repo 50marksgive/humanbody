@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -73,6 +72,34 @@
       margin-top: 40px;
     }
 
+    #nervous-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: red;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid red;
+      width: 0;
+      margin: 40px auto 0 auto;
+      animation: typing 4s steps(14, end) forwards, blink 0.75s step-end infinite;
+      text-align: center;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 14ch;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
     .container {
       display: flex;
       align-items: flex-start;
@@ -112,9 +139,37 @@
     .reverse {
       flex-direction: row-reverse;
     }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      nav button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .title {
+        font-size: 28px;
+        text-align: center;
+        width: 100%;
+      }
+
+      #nervous-title {
+        font-size: 28px;
+      }
+    }
   </style>
 </head>
-
 <body>
   <header>
     <div class="title">Human Body</div>
@@ -123,21 +178,24 @@
       <button>Nervous System</button>
       <button onclick="location.href='glandular.html'">Glandular System</button>
       <button onclick="location.href='reproductive.html'">Reproductive System</button>
+      <button onclick="location.href='trivia.html'">Trivia/FunFacts</button>
     </nav>
   </header>
 
+  <!-- Nervous System Title -->
+  <h1 id="nervous-title">Nervous System</h1>
+
   <!-- Nervous System -->
-  <h1 class="section-title">Nervous System</h1>
   <section class="container">
     <div class="text-content">
       <p>
-        The nervous system is the body's communication network. It detects, processes, and responds to internal and external stimuli. It includes the central nervous system (CNS) – brain and spinal cord – and the peripheral nervous system (PNS) that links the CNS to limbs and organs.
+        The nervous system is the body’s communication superhighway. It helps us react to stimuli, process information, and maintain homeostasis. Composed of the central nervous system (CNS) and the peripheral nervous system (PNS), it allows interaction between our body and the environment.
       </p>
       <p>
-        The nervous system allows us to perceive the world through our senses and respond appropriately. It controls everything from breathing and heart rate to emotions, thoughts, and memories. It operates through electrical impulses and chemical signals, ensuring instant communication between body parts.
+        The CNS includes the brain and spinal cord — the control centers for processing and sending signals. The PNS connects the CNS to the limbs and organs. This vast network transmits electrical impulses that regulate everything from movement to memory.
       </p>
       <p>
-        The autonomic nervous system, a part of the PNS, works involuntarily to regulate bodily functions like digestion, blood pressure, and temperature control. It has two divisions: the sympathetic system (fight or flight) and the parasympathetic system (rest and digest).
+        Another critical part is the autonomic nervous system, which operates automatically. It regulates vital functions such as heart rate, breathing, digestion, and temperature. It consists of two parts: the sympathetic (fight or flight) and parasympathetic (rest and digest) systems.
       </p>
       <ul>
         <li>Central Nervous System (CNS)</li>
@@ -193,7 +251,5 @@
       <img src="https://www.drsamrobbins.com/wp-content/uploads/2018/11/Spine.jpg" alt="Spinal Cord" />
     </div>
   </section>
-
 </body>
-
 </html>
