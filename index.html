@@ -2,183 +2,234 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Human Body Systems</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Human Body Systems</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: black;
-            color: #f0f0f0;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header {
-            background-color: black;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: black;
+      color: #f0f0f0;
+    }
 
-        .title {
-            font-size: 36px;
-            font-weight: 800;
-            color: red;
-        }
+    header {
+      background-color: black;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
 
-        nav {
-            display: flex;
-            gap: 20px;
-        }
+    .title {
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 800;
+      color: red;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid red;
+      animation: typing 3s steps(20, end), blink 0.8s step-end infinite;
+      max-width: 100%;
+    }
 
-        nav button {
-            background: none;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
-            position: relative;
-            transition: all 0.3s ease;
-        }
+    @keyframes typing {
+      from {
+        width: 0;
+      }
 
-        nav button:hover {
-            color: red;
-        }
+      to {
+        width: 12ch;
+      }
+    }
 
-        nav button:hover::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: red;
-        }
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
 
-        .container {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            padding: 40px;
-            gap: 40px;
-        }
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-        .text-content {
-            flex: 1;
-        }
+    nav button {
+      background: none;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+    }
 
-        .text-content p {
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
+    nav button:hover {
+      color: red;
+      text-shadow: 0 0 8px red;
+    }
 
-        .text-content ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
+    nav button:hover::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: red;
+    }
 
-        .image-box {
-            max-width: 400px;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
-            border-radius: 12px;
-            overflow: hidden;
-        }
+    .container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 40px;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
 
-        .image-box img {
-            width: 100%;
-            height: auto;
-        }
+    .text-content {
+      flex: 1;
+      min-width: 280px;
+    }
 
-        .footer-section {
-            margin-top: 60px;
-            background-color: #222;
-            padding: 40px;
-        }
+    .text-content p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
 
-        .divider {
-            height: 4px;
-            background: linear-gradient(to right, black, red, black);
-            box-shadow: 0 0 20px red;
-            margin-bottom: 40px;
-        }
+    .text-content ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
 
-        .footer-box {
-            background-color: #333;
-            color: #ccc;
-            padding: 30px;
-            border-radius: 12px;
-        }
+    .image-box {
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
+      border-radius: 12px;
+      overflow: hidden;
+    }
 
-        .footer-box h2 {
-            color: red;
-            margin-bottom: 15px;
-        }
+    .image-box img {
+      width: 100%;
+      height: auto;
+    }
 
-        .footer-box ul {
-            list-style-type: circle;
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
+    .footer-section {
+      margin-top: 60px;
+      background-color: #222;
+      padding: 40px;
+    }
 
-        .footer-box p {
-            font-style: italic;
-        }
-    </style>
+    .divider {
+      height: 4px;
+      background: linear-gradient(to right, black, darkred, black);
+      box-shadow: 0 0 20px darkred;
+      margin-bottom: 40px;
+    }
+
+    .footer-box {
+      background-color: #333;
+      color: #ccc;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .footer-box h2 {
+      color: red;
+      margin-bottom: 15px;
+    }
+
+    .footer-box p {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      nav {
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .image-box {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <div class="title">Human Body</div>
-        <nav>
-            <button>Home</button>
-            <a href="nervous.html"><button>Nervous System</button></a>
-            <a href="glandular.html"><button>Glandular System</button></a>
-            <a href="reproductive.html"><button>Reproductive System</button></a>
-        </nav>
-    </header>
+  <header>
+    <div class="title">Human Body</div>
+    <nav>
+      <button>Home</button>
+      <a href="nervous.html"><button>Nervous System</button></a>
+      <a href="glandular.html"><button>Glandular System</button></a>
+      <a href="reproductive.html"><button>Reproductive System</button></a>
+      <a href="trivia.html"><button>Trivia/FunFacts</button></a>
+    </nav>
+  </header>
 
-    <section class="container">
-        <div class="text-content">
-            <p>The human body is an extraordinary biological machine composed of many complex systems that work in harmony to maintain life. These systems are made up of organs and tissues that carry out specific roles, such as transporting nutrients, regulating temperature, responding to stimuli, and reproducing. Understanding how these systems interact helps us appreciate how intricate and resilient the body is. Each system has unique functions, yet they are interconnected and rely on each other to perform optimally. From the brain that controls our thoughts to glands that regulate hormones, every part has a vital role in keeping us alive and healthy.</p>
+  <section class="container">
+    <div class="text-content">
+      <p>
+        The human body is an extraordinary biological machine composed of many complex systems that work in harmony to
+        maintain life. These systems are made up of organs and tissues that carry out specific roles, such as
+        transporting nutrients, regulating temperature, and reproducing. Understanding how these
+        systems interact helps us appreciate how intricate and resilient the body is. Each system has unique functions,
+        yet they are interconnected and rely on each other to perform optimally. From the brain that controls our
+        thoughts to glands that regulate hormones, every part has a vital role in keeping us alive and healthy.
+      </p>
 
-            <ul>
-                <li>Introduction</li>
-                <li>Nervous System</li>
-                <li>Brain and Spinal Cord</li>
-                <li>Glandular System</li>
-                <li>Reproductive System</li>
-                <li>Male Reproductive System</li>
-                <li>Female Reproductive System (External)</li>
-                <li>Female Reproductive System (Internal)</li>
-            </ul>
-        </div>
-
-        <div class="image-box">
-            <img src="https://img.freepik.com/premium-photo/human-body-with-diagram-body-labeled-with-word-stomach_1287512-40038.jpg?w=1380" alt="Human Body Diagram">
-        </div>
-    </section>
-
-    <div class="footer-section">
-        <div class="divider"></div>
-        <div class="footer-box">
-            <h2>Team Information</h2>
-            <ul>
-                <li><strong>Teacher:</strong> Utsab Sir</li>
-                <li><strong>Website Creators:</strong> Anup & Vision</li>
-            </ul>
-            <p>We extend our sincere gratitude to our health teacher for guiding and inspiring us throughout this educational journey.</p>
-        </div>
+      <ul>
+        <li>Anup Bhattarai - Introduction</li>
+        <li>Jeny Rai - Nervous System</li>
+        <li>Vision Dhakal - Brain and Spinal Cord</li>
+        <li>Kiran Gurung - Glandular System</li>
+        <li>Serina Chapagain - Male Reproductive System</li>
+        <li>Janbi Dhakal - Female Reproductive System (External)</li>
+        <li>Soniya Tamang - Female Reproductive System (Internal)</li>
+      </ul>
     </div>
+
+    <div class="image-box">
+      <img src="https://img.freepik.com/premium-photo/human-body-with-diagram-body-labeled-with-word-stomach_1287512-40038.jpg?w=1380"
+        alt="Human Body Diagram">
+    </div>
+  </section>
+
+  <div class="footer-section">
+    <div class="divider"></div>
+    <div class="footer-box">
+      <h2>About Us</h2>
+      <p><strong>Website Creators:</strong> Anup Bhattarai and Vision Dhakal</p>
+      <p><strong>Teacher:</strong> Utsav Sir</p>
+      <p>We created this website as part of our health project to help others understand the human body systems better.</p>
+    </div>
+  </div>
 </body>
 
 </html>
