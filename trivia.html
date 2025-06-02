@@ -1,28 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trivia/FunFacts</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    html { scroll-behavior: smooth; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
       background-color: black;
       color: #f0f0f0;
     }
-
     header {
       background-color: black;
       padding: 20px;
@@ -34,46 +24,26 @@
       top: 0;
       z-index: 999;
     }
-
-    .title {
-      font-size: clamp(24px, 5vw, 36px);
-      font-weight: 800;
-      color: red;
-    }
-
+    .title { font-size: clamp(24px, 5vw, 36px); font-weight: 800; color: red; }
     nav {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
     }
-
     nav button {
-      background: none;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-      position: relative;
-      transition: all 0.3s ease;
+      background: none; color: white; border: none;
+      padding: 10px 20px; font-weight: bold;
+      font-size: 16px; cursor: pointer;
+      position: relative; transition: all 0.3s ease;
     }
-
     nav button:hover {
-      color: red;
-      text-shadow: 0 0 8px red;
+      color: red; text-shadow: 0 0 8px red;
     }
-
     nav button:hover::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
+      content: ''; position: absolute; bottom: 0;
+      left: 0; width: 100%; height: 2px;
       background-color: red;
     }
-
     .subtitle {
       text-align: center;
       font-size: 30px;
@@ -88,7 +58,13 @@
       margin-right: auto;
       animation: typing 4s steps(30, end) forwards, blink 0.8s step-end infinite;
     }
-
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 15ch; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
     #score-board {
       text-align: center;
       font-size: 22px;
@@ -96,29 +72,11 @@
       color: red;
       font-weight: bold;
     }
-
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-
-      to {
-        width: 15ch;
-      }
-    }
-
-    @keyframes blink {
-      50% {
-        border-color: transparent;
-      }
-    }
-
     #quiz-container {
       max-width: 800px;
       margin: 40px auto;
       padding: 20px;
     }
-
     .question-box {
       background-color: #111;
       padding: 20px;
@@ -126,17 +84,12 @@
       border-left: 5px solid red;
       border-radius: 10px;
     }
-
-    .question-box h3 {
-      margin-bottom: 15px;
-    }
-
+    .question-box h3 { margin-bottom: 15px; }
     .options {
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
-
     .options button {
       padding: 10px;
       font-size: 16px;
@@ -145,19 +98,9 @@
       cursor: pointer;
       transition: 0.3s;
     }
-
-    .options button:hover {
-      background-color: #333;
-    }
-
-    .correct {
-      background-color: rgba(0, 255, 0, 0.3) !important;
-    }
-
-    .wrong {
-      background-color: rgba(255, 0, 0, 0.3) !important;
-    }
-
+    .options button:hover { background-color: #333; }
+    .correct { background-color: rgba(0, 255, 0, 0.3) !important; }
+    .wrong { background-color: rgba(255, 0, 0, 0.3) !important; }
     #restart-btn {
       display: none;
       margin: 40px auto;
@@ -169,24 +112,13 @@
       border-radius: 8px;
       cursor: pointer;
     }
-
     @media (max-width: 768px) {
-      nav {
-        justify-content: center;
-        margin-top: 10px;
-      }
-
-      .subtitle {
-        font-size: 24px;
-      }
-
-      #quiz-container {
-        padding: 10px;
-      }
+      nav { justify-content: center; margin-top: 10px; }
+      .subtitle { font-size: 24px; }
+      #quiz-container { padding: 10px; }
     }
   </style>
 </head>
-
 <body>
   <header>
     <div class="title">Human Body</div>
@@ -201,74 +133,78 @@
 
   <div class="subtitle">Trivia/FunFacts</div>
   <div id="score-board">Score: 0</div>
-
   <div id="quiz-container"></div>
-
   <button id="restart-btn" onclick="location.reload()">Restart Quiz</button>
 
   <script>
     const questions = [
       {
-        question: "How much power does your brain generate?",
-        options: ["10W", "20W", "50W", "100W"],
-        answer: "20W"
+        question: "How long is our DNA in all human body?",
+        options: ["100 meters", "2 meters", "10 km", "Over 100 billion kilometers"],
+        answer: "Over 100 billion kilometers"
       },
       {
-        question: "How fast can brain signals travel?",
-        options: ["50 mph", "250 mph", "100 mph", "500 mph"],
-        answer: "250 mph"
+        question: "How many taste buds do we have in our tongue?",
+        options: ["1,000", "10,000", "100,000", "50,000"],
+        answer: "10,000"
       },
       {
-        question: "How many thoughts does a person have each day?",
-        options: ["1,000", "10,000", "60,000–80,000", "100,000"],
-        answer: "60,000–80,000"
+        question: "How much pressure does our heart produce?",
+        options: ["Enough to squirt blood 1 foot", "Enough to squirt blood 10 feet", "Enough to squirt blood 30 feet", "100 psi"],
+        answer: "Enough to squirt blood 30 feet"
       },
       {
-        question: "Which part of the brain controls your heartbeat?",
-        options: ["Cerebrum", "Medulla", "Spinal Cord", "Hypothalamus"],
-        answer: "Medulla"
+        question: "What percentage of the human body is made up of water?",
+        options: ["30%", "50%", "60%", "80%"],
+        answer: "60%"
       },
       {
-        question: "How many neurons are in the human brain?",
-        options: ["10 billion", "86 billion", "1 trillion", "500 million"],
-        answer: "86 billion"
+        question: "How many types of smell can you detect with your nose?",
+        options: ["100", "1,000", "10,000", "Over 1 trillion"],
+        answer: "Over 1 trillion"
       },
       {
-        question: "Which part of the brain is responsible for memory?",
-        options: ["Amygdala", "Medulla", "Hippocampus", "Cerebellum"],
-        answer: "Hippocampus"
+        question: "Which part of the brain is responsible for creativity?",
+        options: ["Frontal lobe", "Cerebellum", "Brainstem", "Occipital lobe"],
+        answer: "Frontal lobe"
       },
       {
-        question: "What percentage of oxygen does the brain consume?",
-        options: ["10%", "20%", "50%", "5%"],
-        answer: "20%"
+        question: "How many times does the heart beat per day?",
+        options: ["10,000", "100,000", "1 million", "500,000"],
+        answer: "100,000"
       },
       {
-        question: "What is the brain's primary source of energy?",
-        options: ["Fat", "Glucose", "Protein", "Carbohydrates"],
-        answer: "Glucose"
+        question: "Which part of your body continues to grow throughout your life?",
+        options: ["Nose and ears", "Legs", "Arms", "Stomach"],
+        answer: "Nose and ears"
       },
       {
-        question: "What is the average weight of the human brain?",
-        options: ["1.4 kg", "2.5 kg", "800 g", "3 kg"],
-        answer: "1.4 kg"
+        question: "When are you tallest?",
+        options: ["Morning", "Afternoon", "Evening", "Midnight"],
+        answer: "Morning"
       },
       {
-        question: "What protects the brain from harmful substances in the blood?",
-        options: ["Skull", "Blood-Brain Barrier (BBB)", "Cerebrospinal Fluid", "Meninges"],
-        answer: "Blood-Brain Barrier (BBB)"
+        question: "How genetically similar are all humans?",
+        options: ["50%", "75%", "99.9%", "80%"],
+        answer: "99.9%"
       }
     ];
 
     const quizContainer = document.getElementById('quiz-container');
     const scoreBoard = document.getElementById('score-board');
     const restartBtn = document.getElementById('restart-btn');
-
     let score = 0;
     let questionsAnswered = 0;
 
     const correctSound = new Audio("https://www.soundjay.com/buttons/sounds/button-4.mp3");
     const wrongSound = new Audio("https://www.soundjay.com/buttons/sounds/button-10.mp3");
+
+    const speakFinalScore = (score) => {
+      const msg = new SpeechSynthesisUtterance(`Congratulations! You completed the quiz with a score of ${score} out of 100.`);
+      msg.rate = 1;
+      msg.pitch = 1;
+      window.speechSynthesis.speak(msg);
+    };
 
     const showFinalMessage = () => {
       const msg = document.createElement('div');
@@ -281,13 +217,13 @@
       msg.style.fontSize = '1.5rem';
       msg.innerHTML = `🎉 <strong>Congratulations!</strong> You completed the quiz.<br>Your final score is: <span style="color: red">${score}</span>`;
       quizContainer.appendChild(msg);
+      speakFinalScore(score);
       restartBtn.style.display = 'block';
     };
 
     questions.forEach((q, index) => {
       const questionBox = document.createElement('div');
       questionBox.classList.add('question-box');
-
       const questionTitle = document.createElement('h3');
       questionTitle.textContent = `${index + 1}. ${q.question}`;
       questionBox.appendChild(questionTitle);
@@ -300,6 +236,7 @@
         btn.textContent = option;
         btn.addEventListener('click', () => {
           if (btn.disabled) return;
+
           if (option === q.answer) {
             btn.classList.add('correct');
             correctSound.play();
@@ -331,5 +268,4 @@
     });
   </script>
 </body>
-
 </html>
