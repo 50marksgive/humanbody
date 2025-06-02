@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Human Body Systems</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
@@ -114,14 +115,8 @@
       font-size: 18px;
     }
 
-    .text-content ul {
-      list-style-type: disc;
-      padding-left: 20px;
-      margin-top: 10px;
-    }
-
     .image-box {
-      max-width: 400px;
+      max-width: 500px;
       box-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
       border-radius: 12px;
       overflow: hidden;
@@ -130,6 +125,26 @@
     .image-box img {
       width: 100%;
       height: auto;
+    }
+
+    .fun-facts {
+      padding: 40px;
+      background-color: #111;
+    }
+
+    .fun-facts h2 {
+      color: red;
+      margin-bottom: 20px;
+    }
+
+    .fun-facts ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    .fun-facts li {
+      font-size: 18px;
+      margin-bottom: 10px;
     }
 
     .footer-section {
@@ -193,8 +208,9 @@
     </nav>
   </header>
 
-  <section class="container">
+  <section class="container" data-aos="fade-up">
     <div class="text-content">
+      <p><strong>Introduction – Anup Bhattarai</strong></p>
       <p>
         The human body is an extraordinary biological machine composed of many complex systems that work in harmony to
         maintain life. These systems are made up of organs and tissues that carry out specific roles, such as
@@ -203,22 +219,20 @@
         yet they are interconnected and rely on each other to perform optimally. From the brain that controls our
         thoughts to glands that regulate hormones, every part has a vital role in keeping us alive and healthy.
       </p>
-
-      <ul>
-        <li>Anup Bhattarai - Introduction</li>
-        <li>Jeny Rai - Nervous System</li>
-        <li>Vision Dhakal - Brain and Spinal Cord</li>
-        <li>Kiran Gurung - Glandular System</li>
-        <li>Serina Chapagain - Male Reproductive System</li>
-        <li>Janbi Dhakal - Female Reproductive System (External)</li>
-        <li>Soniya Tamang - Female Reproductive System (Internal)</li>
-      </ul>
     </div>
 
-    <div class="image-box">
+    <div class="image-box" data-aos="zoom-in">
       <img src="https://img.freepik.com/premium-photo/human-body-with-diagram-body-labeled-with-word-stomach_1287512-40038.jpg?w=1380"
         alt="Human Body Diagram">
     </div>
+  </section>
+
+  <section class="fun-facts" data-aos="fade-up">
+    <h2>Fun Facts About the Human Body</h2>
+    <ul>
+      <li>The human body has 206 bones in adulthood.</li>
+      <li>The brain uses about 20% of the body’s energy.</li>
+    </ul>
   </section>
 
   <div class="footer-section">
@@ -230,6 +244,11 @@
       <p>We created this website as part of our health project to help others understand the human body systems better.</p>
     </div>
   </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
