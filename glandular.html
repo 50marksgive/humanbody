@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Glandular System</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet"/>
   <style>
     * {
       margin: 0;
@@ -73,6 +72,34 @@
       margin-top: 40px;
     }
 
+    #glandular-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: red;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid red;
+      width: 0;
+      margin: 40px auto 0 auto;
+      animation: typing 4s steps(16, end) forwards, blink 0.75s step-end infinite;
+      text-align: center;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 16ch;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
     .container {
       display: flex;
       align-items: flex-start;
@@ -113,34 +140,41 @@
       flex-direction: row-reverse;
     }
 
-    /* Typewriter Effect */
-    #typewriter {
-      display: inline-block;
-      border-right: 2px solid red;
-      white-space: nowrap;
-      overflow: hidden;
-      width: 0;
-      animation: typing 3s steps(25, end) forwards, blink 0.8s step-end infinite;
+    .fact {
+      color: white;
+      font-style: italic;
+      margin-top: 10px;
     }
 
-    @keyframes typing {
-      from {
-        width: 0;
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
       }
 
-      to {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      nav button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .title {
+        font-size: 28px;
+        text-align: center;
         width: 100%;
       }
-    }
 
-    @keyframes blink {
-      50% {
-        border-color: transparent;
+      #glandular-title {
+        font-size: 28px;
       }
     }
   </style>
 </head>
-
 <body>
   <header>
     <div class="title">Human Body</div>
@@ -153,66 +187,48 @@
     </nav>
   </header>
 
-  <!-- Glandular System -->
-  <h1 class="section-title"><span id="typewriter"></span></h1>
+  <h1 id="glandular-title">Glandular System</h1>
 
+  <!-- Glandular System -->
   <section class="container">
     <div class="text-content">
       <p>
-        The glandular system, also known as the endocrine system, is a vital part of the human body responsible for maintaining homeostasis by producing and releasing hormones. These hormones act as chemical messengers that travel through the bloodstream to regulate growth, metabolism, mood, development, tissue function, sexual function, and even sleep.
+        The glandular system, also known as the endocrine system, consists of glands that secrete hormones directly into the bloodstream. These hormones regulate metabolism, growth and development, tissue function, sexual function, reproduction, sleep, and mood, among other things.
       </p>
       <p>
-        Unlike the nervous system, which provides quick responses, the glandular system works more slowly but has long-lasting effects. The glands secrete hormones directly into the blood (endocrine) or through ducts (exocrine), affecting organs and systems throughout the body.
-      </p>
-      <p>
-        This system plays a central role in coordinating numerous body functions and adapting to changes in the internal and external environment. A balanced endocrine system is essential for good health, and disruptions can lead to disorders such as diabetes, thyroid problems, or growth abnormalities.
+        This system works closely with the nervous system to maintain homeostasis. The major glands include the pituitary, thyroid, adrenal, pancreas, and gonads. Each gland releases specific hormones that target different organs and tissues.
       </p>
       <ul>
-        <li><strong>Endocrine Glands:</strong> Secrete hormones directly into the blood (e.g., pituitary, thyroid, adrenal).</li>
-        <li><strong>Exocrine Glands:</strong> Release substances through ducts to the surface or internal cavities (e.g., sweat, salivary glands).</li>
-        <li><strong>Main Hormones:</strong> Insulin, adrenaline, estrogen, testosterone, thyroxine, cortisol, melatonin, etc.</li>
+        <li>Regulates long-term body processes</li>
+        <li>Maintains internal balance and stability</li>
+        <li>Interacts with the nervous system to control bodily functions</li>
       </ul>
+      <div class="fact">🧬 Fun Fact: Hormones travel through your blood at less than 1 inch per second—but they control powerful body changes!</div>
     </div>
     <div class="image-box">
-      <img src="https://th.bing.com/th/id/R.d6d89173fe89a1e2eb81cd4c09bf23d5?rik=yL1OKOoDd4vysA&riu=http%3a%2f%2fmedicinebtg.com%2fwp-content%2fuploads%2f2017%2f06%2fchart-format-jpeg-width-px-height-de-Glands-In-The-Body-Diagram-Anatomy-mar-glands-in-the-body-diagram.jpg&ehk=JJ4YG%2bmE80i6WlW55n0khPMif7wEJfh4BkXyttqS1WU%3d&risl=&pid=ImgRaw&r=0" alt="Glandular System Diagram" />
+      <img src="https://th.bing.com/th/id/R.8f5bb93a21c02b2c6e964f6abdbd8c08?rik=SzlHwoUW6WbYig&riu=http%3a%2f%2fmedicinebtg.com%2fwp-content%2fuploads%2f2017%2f06%2fsystem-we-discuss-different-types-hormones-and-examine-how-glands-and-endorine-Endocrine-Glands-Structure-And-Function-glands-are-768x917.jpg&ehk=DZ1TRDLfkxUXRbodbAMCk74jllGiFQzas4awWIZ1uB0%3d&risl=&pid=ImgRaw&r=0" alt="Glandular System" />
     </div>
   </section>
 
-  <!-- Major Glands -->
+  <!-- Major Glands Section -->
   <h1 class="section-title">Major Glands</h1>
   <section class="container reverse">
-    <div class="text-content" style="flex: 1 1 100%;">
+    <div class="image-box">
+      <img src="https://thumbs.dreamstime.com/b/adrenal-glands-image-human-kidney-gland-health-care-anatomical-medical-vector-illustration-light-blue-background-r-97451188.jpg" alt="Adrenal Glands" />
+    </div>
+    <div class="text-content">
+      <p>
+        The major glands in the human body are each responsible for producing specific hormones that control essential functions. Here’s a breakdown:
+      </p>
       <ul>
-        <li><strong>Pituitary Gland:</strong> Called the "master gland," it regulates other glands and produces hormones for growth, reproduction, and metabolism.</li>
-        <li><strong>Thyroid Gland:</strong> Located in the neck, it controls the body’s metabolic rate through hormones like thyroxine.</li>
-        <li><strong>Adrenal Glands:</strong> Positioned above the kidneys, they produce cortisol and adrenaline to manage stress, metabolism, and blood pressure.</li>
-        <li><strong>Pancreas:</strong> Functions as both an endocrine and exocrine gland. It releases insulin and glucagon to control blood sugar levels.</li>
-        <li><strong>Gonads (Testes & Ovaries):</strong> Produce sex hormones — testosterone in males, estrogen and progesterone in females — which regulate sexual development and reproduction.</li>
-        <li><strong>Pineal Gland:</strong> Produces melatonin, which helps regulate sleep-wake cycles (circadian rhythm).</li>
-        <li><strong>Hypothalamus:</strong> Links the nervous system to the endocrine system. It controls the pituitary gland and regulates body temperature, hunger, and thirst.</li>
-        <li><strong>Parathyroid Glands:</strong> Four small glands behind the thyroid that regulate calcium levels in the blood and bones.</li>
-        <li><strong>Thymus:</strong> Located behind the sternum, important for immune function during childhood; it produces T-cells.</li>
+        <li><strong>Pituitary Gland:</strong> Often called the “master gland,” it controls other endocrine glands and regulates growth and development.</li>
+        <li><strong>Thyroid Gland:</strong> Regulates metabolism, energy, and growth through the release of thyroid hormones.</li>
+        <li><strong>Adrenal Glands:</strong> Produce hormones like adrenaline and cortisol that help respond to stress and regulate metabolism.</li>
+        <li><strong>Pancreas:</strong> Regulates blood sugar levels by releasing insulin and glucagon.</li>
+        <li><strong>Gonads (Testes/Ovaries):</strong> Responsible for reproductive hormones such as testosterone, estrogen, and progesterone.</li>
       </ul>
+      <div class="fact">🧬 Fun Fact: The pituitary gland is no larger than a pea—but it can control organs throughout your whole body!</div>
     </div>
   </section>
-
-  <script>
-    // Typewriter effect for "Glandular System"
-    const text = "Glandular System";
-    const typewriter = document.getElementById("typewriter");
-    let index = 0;
-
-    function type() {
-      if (index < text.length) {
-        typewriter.textContent += text.charAt(index);
-        index++;
-        setTimeout(type, 100);
-      }
-    }
-
-    type();
-  </script>
-
 </body>
-
 </html>
